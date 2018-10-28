@@ -30,7 +30,7 @@ def logout():
     flash("Goodbye!")
     return redirect(url_for('login'))
 
-app.route('/')
+@app.route('/', method='post')
 def login():
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME'] \
